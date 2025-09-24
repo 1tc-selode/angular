@@ -1,0 +1,31 @@
+<!---/*
+/*
+Fő komponens (szülő):
+•	Legyen benne egy lista a kedvenc állataidról (pl. kutya, cica, nyuszi, papagáj).
+•	A listát jelenítsd meg úgy, hogy minden elem külön sorban látszódjon.
+•	Minden állat mellett legyen egy gomb, amivel kiválasztható az adott állat.
+•	A kiválasztott állat adatait add át a másik komponensnek.
+•	Amikor a másik komponens jelzi, hogy törölni kell egy állatot, akkor töröld ki a listából.
+
+*/-->
+<div>
+  <h2>Kedvenc állataim</h2>
+  <div>
+    <label>Új állat neve:
+      <input [(ngModel)]="ujAllatNev" placeholder="pl. hörcsög">
+    </label>
+    <label>Leírás:
+      <input [(ngModel)]="ujAllatLeiras" placeholder="pl. A hörcsög szeret futni.">
+    </label>
+    <button (click)="ujAllatHozzaadasa()">Hozzáadás</button>
+  </div>
+  <p>Állatok száma: {{ allatSzamlalo }}</p>
+  <ul>
+    <li *ngFor="let allat of kedvencAllatok">
+      <b>{{ allat }}</b> – <i>{{ allatLeirasok[allat] }}</i>
+      <button (click)="kivalaszt(allat)">Kiválaszt</button>
+    </li>
+  </ul>
+
+  <app-gyermek [allat]="kivalasztottAllat || undefined" (torles)="torolKivalasztottAllat()"></app-gyermek>
+</div>

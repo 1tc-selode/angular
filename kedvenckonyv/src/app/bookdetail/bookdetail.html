@@ -1,0 +1,10 @@
+ <ng-container *ngIf="book; else noBookSelected">
+    <h2>Cím: {{book?.title}}</h2>
+    <p> <strong>Szerző: {{book?.author}}</strong> </p>
+    <p> <strong>Leírás: {{book?.descreption}}</strong> </p>
+    <button (click)="onRemove()">Törlés</button>
+ </ng-container>
+
+ <ng-template #noBookSelected>
+    <p>Nincs kiválasztva könyv</p>
+ </ng-template>

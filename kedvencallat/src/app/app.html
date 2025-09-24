@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let allat of kedvencAllatok">
+    {{ allat }}
+    <button (click)="selectAnimal(allat)">Kiválasztás</button>
+  </li>
+</ul>
+
+<app-reszletezo 
+  [allat]="selectAnimal" 
+  (torles)="removeAnimal($event)">
+</app-reszletezo>

@@ -1,0 +1,22 @@
+<h1 *ngIf="elemek.length > 0; else ures">
+  Szöveg: {{elemek.length}}
+</h1>
+
+<ng-template #ures>
+  <h1>Adj hozza elemeket</h1>
+</ng-template>
+<ng-container *ngIf="false">
+  <ng-container *ngFor="let elem of elemek; let i = index">
+    <p>{{i + 1}} {{elem}}</p>
+    <button (click)="elemTorles(i)">Törlés</button>
+    <hr>
+  </ng-container>
+</ng-container>
+  <form *ngIf="elemek.length < 5; else maxElemszamElerve" (submit)="onSubmit($event)">
+    <input name="cim" />
+    <button type="submit">hozzaad</button>
+  </form>
+
+<ng-template #maxElemszamElerve>
+  <h3>max elemek szam elerve</h3>
+</ng-template>

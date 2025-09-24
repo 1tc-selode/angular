@@ -1,0 +1,12 @@
+<ng-container *ngIf="pizzas; else noPizzaSelected">
+<ul>
+  <li *ngFor = "let pizza of pizzas">
+    {{pizza.name}} - {{pizza.size}} - {{pizza.price}} Ft - {{pizza.available ? 'Elérhető' : 'Nem elérhető'}}
+    <button (click)="onSelectPizza(pizza)">Részletek</button>
+  </li>
+</ul>
+</ng-container>
+
+<ng-template #noPizzaSelected>
+    <p>Nincs pizza</p>
+</ng-template>

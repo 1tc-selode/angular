@@ -1,0 +1,15 @@
+<!--Állat részletező komponens (gyermek):
+•	Kapja meg a szülőtől a kiválasztott állat nevét.
+•	Csak akkor jelenjen meg, ha valóban van kiválasztva állat.
+•	Ha nincs kiválasztva állat, akkor jelenjen meg helyette egy üzenet, hogy „Nincs kiválasztva állat”.
+•	Jelenjen meg az állat neve és egy rövid szöveg, például hogy „Ez az állat nagyon aranyos!”.
+•	Legyen benne egy gomb, amivel vissza tudsz jelezni a szülő komponensnek, hogy az adott állatot törölni kell.
+-->
+<div *ngIf="allat; else nincsAllat">
+  <h3>Kiválasztott állat: {{ allat }}</h3>
+  <p>Ez az állat nagyon aranyos!</p>
+  <button (click)="torol()">Töröl</button>
+</div>
+<ng-template #nincsAllat>
+  <p>Nincs kiválasztva állat.</p>
+</ng-template>

@@ -1,0 +1,28 @@
+<h1>Kedvenc állataim</h1>
+
+<!-- számláló -->
+<p>Összes állat: {{ animals.length }}</p>
+
+<!-- új állat hozzáadása -->
+<div>
+  <input #animalName type="text" placeholder="Állat neve">
+  <input #animalDesc type="text" placeholder="Állat leírása">
+  <button (click)="addAnimal(animalName.value, animalDesc.value); animalName.value=''; animalDesc.value=''">
+    Hozzáadás
+  </button>
+</div>
+
+
+<!-- állatok listája -->
+<ul>
+  <li *ngFor="let animal of animals">
+    {{ animal.name }}
+    <button (click)="selectAnimal(animal)">Részletek</button>
+  </li>
+</ul>
+
+<!-- gyermek komponens -->
+<app-animal-detail
+  [animal]="selectedAnimal"
+  (remove)="removeAnimal($event)">
+</app-animal-detail>

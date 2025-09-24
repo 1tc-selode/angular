@@ -1,0 +1,16 @@
+import { Component} from '@angular/core';
+import { CommonModule} from '@angular/common';
+
+@Component({
+  selector: 'app-root',
+  imports: [CommonModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  students = [
+    { name: 'Alice', age: 15 },
+    { name: 'Bob', age: 22 },
+    { name: 'Charlie', age: 23 }
+  ]
+}

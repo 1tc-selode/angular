@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <!-- könyvek számláló -->
+  <p>Összes könyv: <strong>{{ books.length }}</strong></p>
+
+  <!-- rendezés gomb -->
+  <button (click)="sortByTitle()">
+    Rendezés cím szerint ({{ sortAsc ? 'A → Z' : 'Z → A' }})
+  </button>
+
+  <!-- könyvek listája -->
+  <ul>
+    <li *ngFor="let book of books">
+      <span>{{ book.title }} — {{ book.author }}</span>
+      <button (click)="selectBook(book)">📖 Részletek</button>
+    </li>
+  </ul>
+
+  <!-- új könyv űrlap -->
+  <div class="add-form">
+    <h3>Új könyv hozzáadása</h3>
+
+    <label>
+      Cím:<br />
+      <input [(ngModel)]="newTitle" placeholder="Cím" />
+    </label>
+
+    <label>
+      Szerző:<br />
+      <input [(ngModel)]="newAuthor" placeholder="Szerző" />
+    </label>
+
+    <label>
+      Leírás:<br />
+      <textarea [(ngModel)]="newDescription" placeholder="Rövid leírás"></textarea>
+    </label>
+
+    <button (click)="addBook()"> Hozzáad</button>
+  </div>
+
+  <!-- gyermek komponens -->
+  <app-book-detail
+    [book]="selectedBook"
+    (deleteBook)="deleteSelectedBook()">
+  </app-book-detail>
+</div>

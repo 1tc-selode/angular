@@ -1,0 +1,15 @@
+<h1>Kedves állataimn</h1>
+
+<p>Összes állat: {{animal.length}}</p>
+
+<div>
+  <input #animalName type="text" placeholder="Állat neve">
+  <input #animalDescription type="text" placeholder="Állat leírása">
+  <button (click)="addAnimal(animalName.value,animalDescription.value); animalName.value = ''; animalDescription.value = ''">Hozzáadás</button> 
+</div>
+
+<ul>
+  <li *ngFor="let a of animal">
+    {{a.name}}
+  </li>
+</ul>

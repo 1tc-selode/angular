@@ -1,0 +1,15 @@
+<div class="book-list">
+  <ng-container *ngIf="books.length > 0; else noBooks">
+    <div *ngFor="let book of books" class="book" [ngClass]="{'popular': book.popular}">
+      <h3>{{ book.title }}</h3>
+      <p>Szerző: {{ book.author }}</p>
+      <p>Oldalszám: {{ book.pages }}</p>
+      <ng-container *ngIf="book.popular">
+        <span class="badge">Népszerű!</span>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #noBooks>
+    <p>Nincs elérhető könyv.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let animal of animals">
+    {{ animal.nev }} - {{ animal.faj }} - {{ animal.age }}
+    <span *ngIf="animal.popular"> - Újszülött</span>
+    <hr>
+  </li>
+</ul>

@@ -1,0 +1,5 @@
+<h2>szulo komp</h2>
+<p>diak neve {{ diakNev}}</p>
+<p>diak osztaly {{ diakOsztaly}}</p>
+
+<app-diak [nev]="diakNev" [osztaly]="diakOsztaly" (osztalyValtoztat)="osztalyFrissites($event)"></app-diak>

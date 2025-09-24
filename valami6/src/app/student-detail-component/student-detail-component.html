@@ -1,0 +1,8 @@
+<div *ngIf="student; else nincskivalasztva">
+	<h3>{{ student.name }}</h3>
+	<p>Kor: {{ student.age }}</p>
+	<p>Email: {{ student.email }}</p>
+</div>
+<ng-template #nincskivalasztva>
+	<p>Nincs diák kiválasztva.</p>
+</ng-template>

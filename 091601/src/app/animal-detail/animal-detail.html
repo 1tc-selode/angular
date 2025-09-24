@@ -1,0 +1,10 @@
+<ng-container *ngIf="animal; else noAnimal">
+    <h2>{{ animal?.name }} részletei</h2>
+    <p>{{ animal?.description }}</p>
+    <button (click)="onRemove()">Törlés</button>
+  </ng-container>
+  
+  <ng-template #noAnimal>
+    <p>Nincs kiválasztva állat.</p>
+  </ng-template>
+  

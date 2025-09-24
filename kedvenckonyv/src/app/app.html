@@ -1,0 +1,20 @@
+<h1>Könyvek</h1>
+
+<p> Összes könyv {{books.length}} </p>
+
+<div>
+  <input #bookTitle type="text" placeholder="Cím">
+  <input #bookAuthor type="text" placeholder="Szerző">
+  <input #bookDesc type="text" placeholder="Leírás">
+  <button (click)="addBook(bookTitle.value, bookAuthor.value, bookDesc.value); bookTitle.value = ''; bookAuthor.value = ''; bookDesc.value='' ">Hozzáadás</button>
+</div>
+
+
+<ul>
+  <li *ngFor = "let book of books">
+    {{book.title}} - {{book.author}} 
+    <button (click)="selectBook(book)">Részletek</button>
+  </li>
+</ul>
+
+<app-bookdetail [book]="selectedBook" (remove)="removeBook($event)"></app-bookdetail>

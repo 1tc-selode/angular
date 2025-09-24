@@ -1,0 +1,15 @@
+<h2>Tanulói nyilvántartás</h2>
+<div style="display: flex; gap: 2rem; align-items: flex-start;">
+	<div>
+		<h3>Diákok</h3>
+		<app-student-list-component
+			[students]="students"
+			(selectStudent)="onSelectStudent($event)"
+			(deleteStudent)="onDeleteStudent($event)"
+		></app-student-list-component>
+	</div>
+	<div>
+		<h3>Részletek</h3>
+		<app-student-detail-component [student]="selectedStudent"></app-student-detail-component>
+	</div>
+</div>

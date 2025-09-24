@@ -1,0 +1,23 @@
+.book-list {
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
+.book-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+  transition: box-shadow 0.2s;
+}
+.book-item.popular {
+  border-color: #ff9800;
+  background: #fff3e0;
+  box-shadow: 0 2px 8px #ff980033;
+}
+.star {
+  color: #ff9800;
+  font-size: 1.2em;
+  margin-left: 0.5em;
+}

@@ -1,0 +1,40 @@
+
+<label>
+  Edzés keresése:
+  <input type="text" placeholder="Típus szűrése..." (input)="edzesFilter = $any($event.target).value" />
+</label>
+
+<ul *ngIf="szurtEdzesek.length > 0; else nincsEdzes">
+  <li *ngFor="let edzes of szurtEdzesek" (click)="edzesKivalasztas(edzes)" [class.selected]="kivalasztottEdzes?.id === edzes.id">
+    <ng-container *ngIf="edzes.nepszeru">
+      <strong class="badge">Népszerű</strong>
+    </ng-container>
+    {{ edzes.tipus }} – {{ edzes.idotartam }} perc – Oktató: {{ edzes.oktato }}
+  </li>
+</ul>
+
+<ng-template #nincsEdzes>
+  <p>Nincs elérhető edzés.</p>
+</ng-template>
+
+<div *ngIf="kivalasztottEdzes; else valasszEdzest">
+  <h3>Edzés részletei</h3>
+  <p><b>Típus:</b> {{ kivalasztottEdzes.tipus }}</p>
+  <p><b>Időtartam:</b> {{ kivalasztottEdzes.idotartam }} perc</p>
+  <p><b>Oktató:</b> {{ kivalasztottEdzes.oktato }}</p>
+
+  <label>
+    Résztvevő keresése:
+    <input type="text" placeholder="Név szűrése..." (input)="resztvevoFilter = $any($event.target).value" />
+  </label>
+
+  <ul *ngIf="szurtResztvevok.length > 0; else nincsResztvevo">
+    <li *ngFor="let r of szurtResztvevok">{{ r.nev }}</li>
+  </ul>
+  <ng-template #nincsResztvevo>
+    <p>Nincs résztvevő.</p>
+  </ng-template>
+</div>
+<ng-template #valasszEdzest>
+  <p>Válassz egy edzést a részletekhez!</p>
+</ng-template>

@@ -1,0 +1,18 @@
+<label>
+  FILM szuers
+  <input type="text" placeholder="Keresés..." (input)="movieFilter = $any($event.target).value"/>
+</label>
+
+<ul *ngIf="filteredMovies.length > 0; else noMovies">
+  <li *ngFor="let cinema of filteredMovies">
+    <ng-container *ngIf="cinema.nepszeruseg">
+      <strong class="badge">Népszerű</strong>
+    </ng-container>
+        {{ cinema.name }} - {{ cinema.mufaj }} - {{ cinema.ido }} perc
+    <hr>
+  </li>
+</ul>
+
+<ng-template #noMovies>
+  <p>Nincs találat</p>
+</ng-template>

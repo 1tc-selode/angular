@@ -1,0 +1,14 @@
+<div>
+  <input #pizzaName type="text" placeholder="Név">
+  <input #pizzaSize type="text" placeholder="Méret">
+  <input #pizzaPrice type="number" placeholder="Ár">
+  <br>
+  <label>
+      Elérhető? <input #pizzaAvilable type="checkbox">
+  </label>
+  <br>
+  <button (click)="onAddPizza(pizzaName.value, pizzaSize.value, +pizzaPrice.value, pizzaAvilable.checked); pizzaName.value = ''; pizzaSize.value = ''; pizzaPrice.value=''; pizzaAvilable.checked = false">
+  Hozzáadás
+</button>
+
+</div>

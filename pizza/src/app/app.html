@@ -1,0 +1,14 @@
+<h1>Könyvek</h1>
+
+<p> Összes pizza {{pizzas.length}} </p>
+
+<app-pizza-form-component
+    (addPizza)="addPizza($event.name, $event.size, $event.price, $event.available)">
+</app-pizza-form-component>
+
+<app-pizza-list-component 
+    [pizzas]="pizzas"
+    (selectPizza)="onSelectPizza($event)">
+</app-pizza-list-component>
+
+<app-pizza-detail-component [pizza]="selectedPizza"></app-pizza-detail-component>

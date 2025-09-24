@@ -1,0 +1,14 @@
+<h1>Tanulók listája</h1>
+
+<ng-container *ngIf="students.length > 0; else noStudents">
+<ul>
+  <li *ngFor="let s of students">
+    <p>{{ s.name }} - {{ s.age }} éves</p >
+    <span *ngIf="s.age < 18">"(kiskoru)"</span>
+  </li>
+</ul>
+</ng-container>
+
+<ng-template #noStudents>
+  <p>Nincsenek tanulók a listában.</p>
+</ng-template>

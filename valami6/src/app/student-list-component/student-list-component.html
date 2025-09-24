@@ -1,0 +1,11 @@
+<div *ngIf="students.length === 0">Nincs diák a listában.</div>
+<ul *ngIf="students.length > 0">
+	<li *ngFor="let student of students">
+			<app-student-item-component
+				[student]="student"
+				(delete)="onDelete(student.id)"
+				(select)="onSelect(student)"
+				style="display:inline-block;width:100%"
+			></app-student-item-component>
+	</li>
+</ul>

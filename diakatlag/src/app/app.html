@@ -1,0 +1,30 @@
+<h1>Avarage</h1>
+
+<ng-container *ngIf="students.length > 0; else noStudents">
+<ul>
+  <li *ngFor="let student of students">
+    <strong>{{ student.name }}</strong>
+    ({{ student.age }} éves)
+    <span *ngIf="student.age < 18">kiskorú</span>
+    <br>
+    Jegy: {{ student.grade }} -
+    <span *ngIf="student.grade > 1; else failed">Átment</span>
+    <ng-template #failed>Megbukott</ng-template>
+    <br>
+    Átlag: {{ student.average }}
+    <ng-container *ngIf="student.average >= 4.5">
+      – Kitűnő tanuló
+    </ng-container>
+    <ng-container *ngIf="student.average >= 3 && student.average < 4.5">
+      – Közepes tanuló
+    </ng-container>
+    <ng-container *ngIf="student.average < 3">
+      – Gyenge tanuló
+    </ng-container>
+  </li>
+</ul>
+</ng-container>
+
+<ng-template #noStudents>
+  <p>Nincs diák a listában</p>
+</ng-template>

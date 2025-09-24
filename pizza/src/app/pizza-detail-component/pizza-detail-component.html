@@ -1,0 +1,10 @@
+ <ng-container *ngIf="pizza; else noPizzaSelected">
+    <h2>Cím: {{pizza?.name}}</h2>
+    <p> <strong>Méret: {{pizza?.size}}</strong> </p>
+    <p> <strong>Ár: {{pizza?.price}}</strong> </p>
+    <p><strong>Elérhető-e: {{ pizza?.available ? 'Igen' : 'Nem' }}</strong></p>
+ </ng-container>
+
+ <ng-template #noPizzaSelected>
+    <p>Nincs kiválasztva Pizza</p>
+ </ng-template>
