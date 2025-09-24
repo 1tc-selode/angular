@@ -1,0 +1,19 @@
+<h2>lista</h2>
+
+<div *ngIf="!loaded">Loading...</div>
+
+<ul class="grid-list">
+    <li class="grid-list-li" *ngFor="let user of users" (click)="selectPost(user.id)">
+        <h3>{{ user.id }}</h3>
+        <p>{{ user.userId}}</p>
+        <p>{{ user.title}}</p>
+        <p>{{ user.url}}</p>
+    </li>
+</ul>
+
+<div *ngIf="detailsloading">reszletek betolters</div>
+<app-photosdetail 
+  *ngIf="selectedpost" 
+  [post]="selectedpost" 
+  (back)="clearSelection()">
+</app-photosdetail>
