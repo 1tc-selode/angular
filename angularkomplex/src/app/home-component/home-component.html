@@ -1,0 +1,89 @@
+
+<div class="home-container">
+	<h1>🏆 SportPortál</h1>
+	<p class="home-lead">Üdvözlünk a SportPortálon! Itt mindent megtalálsz, ami a sporteseményekhez, csapatokhoz, hírekhez és kedvencekhez kapcsolódik.</p>
+
+	<div class="home-features">
+		<div class="feature">
+			<h3>Események</h3>
+			<p>Böngéssz sporteseményeket, szűrj, kedvencelj, szerkessz vagy adj hozzá újakat!</p>
+			<a routerLink="/esemenyek">Események megtekintése</a>
+		</div>
+		<div class="feature">
+			<h3>Csapatok</h3>
+			<p>Fedezd fel a csapatokat, nézd meg részletes adataikat, szerkeszd vagy adj hozzá új csapatot!</p>
+			<a routerLink="/csapatok">Csapatok megtekintése</a>
+		</div>
+		<div class="feature">
+			<h3>Ranglista</h3>
+			<p>Tekintsd meg a sportágak szerinti ranglistákat!</p>
+			<a routerLink="/ranglista">Ranglista</a>
+		</div>
+		<div class="feature">
+			<h3>Hírek</h3>
+			<p>Olvasd el a legfrissebb sporthíreket!</p>
+			<a routerLink="/hirek">Hírek</a>
+		</div>
+		<div class="feature">
+			<h3>Kedvencek</h3>
+			<p>Gyűjtsd össze kedvenc eseményeidet és csapataidat egy helyen!</p>
+			<a routerLink="/kedvencek">Kedvencek</a>
+		</div>
+		<div class="feature">
+			<h3>Kapcsolat</h3>
+			<p>Lépj velünk kapcsolatba kérdés vagy javaslat esetén!</p>
+			<a routerLink="/kapcsolat">Kapcsolat</a>
+		</div>
+	</div>
+</div>
+
+<style>
+.home-container {
+	max-width: 900px;
+	margin: 2rem auto;
+	padding: 2rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 16px #0001;
+	text-align: center;
+}
+.home-lead {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+}
+.home-features {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: center;
+}
+.feature {
+	flex: 1 1 220px;
+	min-width: 220px;
+	max-width: 260px;
+	background: #f5f5f5;
+	border-radius: 8px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	box-shadow: 0 1px 6px #0001;
+}
+.feature h3 {
+	margin-top: 0;
+}
+.feature a {
+	display: inline-block;
+	margin-top: 0.5rem;
+	color: #1976d2;
+	text-decoration: none;
+	font-weight: bold;
+}
+.feature a:hover {
+	text-decoration: underline;
+}
+@media (max-width: 700px) {
+	.home-features {
+		flex-direction: column;
+		gap: 1rem;
+	}
+}
+</style>

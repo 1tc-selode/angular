@@ -1,0 +1,24 @@
+<h1>Feladatok</h1>
+<br>
+<div>
+  <input #listTitle type="text" placeholder="Feladat neve">
+  <input #listDueDate type="text" placeholder="Határidő">
+  <input #listPriority type="text" placeholder="Fontosság (alacsony, közepes, magas)">
+  <input #listCategory type="text" placeholder="Kategória">
+  <input #listDesc type="text" placeholder="Leírás">
+  <br>
+  <button (click)="addList(listTitle.value, listDueDate.value, listPriority.value, listCategory.value, listDesc.value); listTitle.value = ''; listDueDate.value = ''; listPriority.value=''; listCategory.value=''; listDesc.value = ''">Hozzáadás</button>
+</div>
+
+<ul>
+  <li *ngFor="let todolist of toDoList">
+    Cím: {{todolist.title}} <br>
+    Határidő: {{todolist.dueDate}} <br>
+    Fontosság: {{todolist.priority}} <br>
+    Kategória: {{todolist.category}} <br>
+    <button (click)="selectList(todolist)">Részletek</button>
+    <hr>
+  </li>
+</ul>
+
+<app-tododetail [todolist]="selectedToDo" (remove)="removeList($event)"></app-tododetail>

@@ -1,0 +1,17 @@
+<div class="filters">
+  <label>
+    <input type="checkbox" [(ngModel)]="filterFutureOnly">
+    Csak jövőbeli járatok
+  </label>
+  <input type="text" placeholder="Szűrés repülőgép típus szerint" [(ngModel)]="filterPlaneType">
+</div>
+
+<ul>
+  <li *ngFor="let flight of filteredFlights">
+    <strong>{{ flight.id }}</strong> — {{ flight.departure }} → {{ flight.arrival }}  
+    <br>Indulás: {{ flight.departureTime }}  
+    <br>Gép: {{ flight.plane }}
+    <br><button (click)="onSelect(flight)">Részletek</button>
+    <hr>
+  </li>
+</ul>

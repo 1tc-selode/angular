@@ -1,0 +1,13 @@
+<section class="konyv-lista">
+  <h2>Könyv lista</h2>
+  <div *ngIf="(books$ | async) as books">
+    <div *ngIf="books.length === 0">Nincsenek könyvek még. Adj hozzá egyet a 'Új könyv' menüpontban.</div>
+    <ul class="books">
+      <li *ngFor="let b of books" class="book">
+        <h3>{{ b.title }} <small>— {{ b.author }}</small></h3>
+        <div class="meta">{{ b.year ? b.year : '' }}</div>
+        <p *ngIf="b.description">{{ b.description }}</p>
+      </li>
+    </ul>
+  </div>
+</section>

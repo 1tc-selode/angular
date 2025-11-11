@@ -1,0 +1,35 @@
+<section class="contact-wrapper">
+  <h2>Kapcsolat</h2>
+  <p>Van kérdésed vagy visszajelzésed? Írj nekünk az alábbi űrlapon.</p>
+
+  <form class="contact-form" (submit)="onSubmit($event)">
+    <div *ngIf="sent()" class="sent-message">Köszönjük! Üzenetedet elküldtük.</div>
+
+    <div class="row">
+      <label for="name">Név</label>
+      <input id="name" name="name" type="text" placeholder="Teljes neved" required />
+    </div>
+
+    <div class="row">
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" placeholder="pelda@cim.hu" required />
+    </div>
+
+    <div class="row">
+      <label for="subject">Tárgy</label>
+      <input id="subject" name="subject" type="text" placeholder="Mi a témád?" />
+    </div>
+
+    <div class="row">
+      <label for="message">Üzenet</label>
+      <textarea id="message" name="message" rows="6" placeholder="Írd ide az üzeneted..." required></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn primary">Küldés</button>
+      <button type="reset" class="btn">Törlés</button>
+    </div>
+
+    <p class="hint">Minden mező kitöltése nem kötelező, de az e-mail és üzenet mező ajánlott a gyors válaszhoz.</p>
+  </form>
+</section>

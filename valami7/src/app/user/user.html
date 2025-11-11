@@ -1,0 +1,12 @@
+
+<h2>users lista</h2>
+
+<div *ngIf="!loaded">Loading...</div>
+
+<ul class="grid-list">
+    <li class="grid-list-li" *ngFor="let u of users" (click)="selectPost(u.id)">
+        <h3>{{ u.id }}</h3>
+        <p>{{ u.name}}</p>
+    </li>
+</ul>
+<app-userdetail *ngIf="selectedpost" [post]="selectedpost" (back)="clearSelection()"></app-userdetail>

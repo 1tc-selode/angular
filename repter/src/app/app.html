@@ -1,0 +1,11 @@
+<h1>Repülőtéri Járatnyilvántartó</h1>
+
+<app-flightlist 
+  [flights]="flights"
+  (selectFlight)="onSelectFlight($event)">
+</app-flightlist>
+
+<app-flightdetail 
+  [flight]="selectedFlight" 
+  (remove)="onRemoveFlight($event)">
+</app-flightdetail>

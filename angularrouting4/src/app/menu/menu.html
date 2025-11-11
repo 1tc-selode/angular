@@ -1,0 +1,6 @@
+<h2>Ételkategóriák</h2>
+<ul>
+	<li *ngFor="let cat of menu">
+		<a [routerLink]="['/menu', cat.category]">{{ cat.category | titlecase }}</a>
+	</li>
+</ul>

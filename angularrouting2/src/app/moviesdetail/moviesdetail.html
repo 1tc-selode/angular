@@ -1,0 +1,8 @@
+<ng-container *ngIf="movie; else notfound">
+	<h2>{{ movie.title }}</h2>
+	<p><strong>Műfaj:</strong> {{ movie.genre }}</p>
+	<p><strong>Év:</strong> {{ movie.year }}</p>
+</ng-container>
+<ng-template #notfound>
+	<p>Film nem található.</p>
+</ng-template>

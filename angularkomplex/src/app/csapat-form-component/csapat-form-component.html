@@ -1,0 +1,31 @@
+
+<div class="csapat-form">
+	<h2 *ngIf="!szerkesztes()">Új csapat</h2>
+	<h2 *ngIf="szerkesztes()">Csapat szerkesztése</h2>
+
+	<form (ngSubmit)="mentes()" #f="ngForm">
+		<div *ngIf="error()" class="error">{{ error() }}</div>
+		<label>Név:
+			<input type="text" [(ngModel)]="csapat().nev" name="nev" required />
+		</label>
+		<label>Sportág:
+			<input type="text" [(ngModel)]="csapat().sportag" name="sportag" required />
+		</label>
+		<label>Ország:
+			<input type="text" [(ngModel)]="csapat().orszag" name="orszag" required />
+		</label>
+		<label>Alapítva:
+			<input type="number" [(ngModel)]="csapat().alapitva" name="alapitva" required />
+		</label>
+		<label>Leírás:
+			<textarea [(ngModel)]="csapat().leiras" name="leiras"></textarea>
+		</label>
+		<label>
+			<input type="checkbox" [(ngModel)]="csapat().kedvenc" name="kedvenc" /> Kedvenc
+		</label>
+		<div class="form-actions">
+			<button type="submit">Mentés</button>
+			<button type="button" (click)="vissza()">Mégse</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,36 @@
+<div class="details-container" *ngIf="person">
+
+
+  <div class="details-left">
+    <p class="description-text">Efficient account Workflow <br> solutions</p>
+    <h2>{{ person.owner.name }}</h2>
+    <p><strong>Role:</strong> {{ person.owner.role }}</p>
+
+    <p class="summary">{{ person.summary }}</p>
+
+    <h3>Skills</h3>
+    <ul class="details-info">
+      <li *ngFor="let skill of person.skills">{{ skill }}</li>
+    </ul>
+
+    <h3>Experience</h3>
+    <ul class="details-info">
+      <li *ngFor="let exp of person.experience">
+        {{ exp.company }} – {{ exp.position }}
+      </li>
+    </ul>
+
+    <h3>Projects</h3>
+    <ul class="details-info">
+      <li *ngFor="let proj of person.projects">
+        <strong>{{ proj.name }}</strong> – {{ proj.description }}
+      </li>
+    </ul>
+      <button (click)="goBack()">← Back</button>
+  </div>
+
+  
+  <div class="details-right">
+    <img [src]="person.owner.image" alt="{{ person.owner.name }}">
+  </div>
+</div>

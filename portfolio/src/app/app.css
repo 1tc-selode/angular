@@ -1,0 +1,247 @@
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.header-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+  background: #f5f5f5;
+}
+
+.header-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: -50px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  filter: grayscale(100%);
+}
+
+.menu-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.menu-items {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 11;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.menu-link {
+  margin: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.portfolio-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #fff;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 12; /* Ensure it stays above other elements */
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-description {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.description-text {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0px;
+}
+
+.description-portfolio {
+  font-size: 12PX;
+  color: #978d30;
+  margin: 0px;
+}
+
+.portfolio-container {
+  text-align: center;
+  padding: 2rem 0;
+  background: #fff;
+  width: 100%;
+}
+
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  width: 250px;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  display: block;
+  margin: 0 auto;
+}
+
+.footer-picture {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+  margin: 0;
+  padding: 0 !important; /* Ensure no padding from Bootstrap */
+}
+
+.footer-picture img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: -70px;
+  left: 0;
+  right: 0;
+  padding: 0px;
+  filter: grayscale(40%);
+  /* No grayscale as per your request */
+}
+
+.footer-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.footer-message {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-top {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 3rem 5rem 2rem 5rem;
+}
+
+.footer-left {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.footer-logo {
+  font-size: 1rem;
+  color: #ffb700;
+}
+
+.footer-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.footer-info {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.footer-middle {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.footer-heading {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-right {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.newsletter-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.footer-bottom {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem 5rem;
+  text-align: center;
+  margin-top: 0; /* No gap with footer-picture */
+}
+
+.social-link {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.copyright-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}

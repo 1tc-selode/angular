@@ -1,0 +1,23 @@
+
+<div *ngIf="csapat() as c; else loading">
+	<div class="csapat-detail-header">
+		<h2>{{ c.nev }}</h2>
+		<button class="fav-btn" [class.active]="c.kedvenc" (click)="toggleKedvenc()" title="Kedvenc">
+			<span *ngIf="c.kedvenc">★</span><span *ngIf="!c.kedvenc">☆</span>
+		</button>
+	</div>
+	<div class="csapat-detail-info">
+		<div><b>Sportág:</b> {{ c.sportag }}</div>
+		<div><b>Ország:</b> {{ c.orszag }}</div>
+		<div><b>Alapítva:</b> {{ c.alapitva }}</div>
+	</div>
+	<div class="csapat-detail-leiras">{{ c.leiras }}</div>
+	<div class="csapat-detail-actions">
+		<button (click)="goToEdit()">Szerkeszt</button>
+		<button (click)="torolCsapat()">Törlés</button>
+		<button routerLink="/csapatok">Vissza a listához</button>
+	</div>
+</div>
+<ng-template #loading>
+	<p>Betöltés...</p>
+</ng-template>

@@ -1,0 +1,14 @@
+<section class="film-lista">
+  <h2>Film lista</h2>
+  <div *ngIf="(films$ | async) as films">
+    <div *ngIf="films.length === 0">Nincsenek filmek még. Adj hozzá egyet az 'Új film' menüpontban.</div>
+    <ul class="films">
+      <li *ngFor="let f of films" class="film">
+        <h3>{{ f.title }} <small>— {{ f.director }}</small></h3>
+        <div class="meta">{{ f.year ? f.year : '' }}</div>
+        <p *ngIf="f.description">{{ f.description }}</p>
+      </li>
+    </ul>
+  </div>
+</section>
+

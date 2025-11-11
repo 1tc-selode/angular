@@ -1,0 +1,8 @@
+<ng-container *ngIf="destination; else notfound">
+	<h2>{{ destination.city }}, {{ destination.country }}</h2>
+	<img [src]="destination.image" alt="{{destination.city}}" width="200">
+	<p><strong>Ár:</strong> {{ destination.price | number }} Ft</p>
+</ng-container>
+<ng-template #notfound>
+	<p>Úti cél nem található.</p>
+</ng-template>

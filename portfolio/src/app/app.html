@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="header-image">
+    <img src="https://media.gettyimages.com/id/1336695502/photo/shot-of-a-notebook-and-laptop-in-an-office.jpg?s=612x612&w=gi&k=20&c=1RIv--zl5npVy6S0goA7IqGOYVlK9BJZRKLv9xJ89AM=">
+    <!-- Menu and Portfolio Text Overlay -->
+    <div class="menu-overlay">
+      <div class="menu-items">
+        <span class="logo">@ Zylo</span>
+        <a href="#" class="menu-link">About</a>
+        <a href="#" class="menu-link">Pages</a>
+        <a href="#" class="menu-link  ">Services</a>
+        <a href="#" class="menu-link">News</a>
+        <a href="#" class="menu-link">Contact</a>
+      </div>
+      <h1 class="portfolio-title">PORTFOLIO</h1>
+    </div>
+  </div>
+
+  <!-- Portfolio Description -->
+
+
+  <div class="row">
+
+    <div *ngIf="!selectedPerson && loaded; else detailsView" class="portfolio-container">
+            <div class="row">
+    <div class="col-md-12 portfolio-description">
+      <p class="description-portfolio">@ PORTFOLIO</p>
+      <p class="description-text">Efficient account Workflow <br> solutions</p>
+    </div>
+  </div>
+      <div class="portfolio-grid">
+        <div *ngFor="let person of people" class="portfolio-item" (click)="showDetails(person)">
+          <img [src]="person.owner.image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row footer-picture">
+    <img src="https://img.freepik.com/premium-photo/portrait-smiling-african-american-businessman-signs-contract-sit-table-meeting-office-with-notebook-with-pen-laptop_183314-5976.jpg" alt="">
+    <div class="footer-overlay">
+      <p class="footer-message">Guiding your business towards<br> success, together.</p>
+    </div>
+  </div>
+
+  <div class="row footer-top">
+    <div class="col-md-3 footer-left">
+      <span class="footer-logo">@ Zylo</span>
+      <p class="footer-text">We understand your business can be chaotic. That’s where we come in.</p>
+      <p class="footer-info">Company Information</p>
+      <p class="footer-info">Office: 3517 W. Gray St. Utica, Pennsylvania 57867</p>
+      <p class="footer-info">Send mail: tanyal@zylo.com</p>
+      <p class="footer-info">Call us: (321)-456-7890</p>
+    </div>
+    <div class="col-md-3 footer-middle">
+      <h4 class="footer-heading">Quick Links</h4>
+      <p><a href="#" class="footer-link">About Us</a></p>
+      <p><a href="#" class="footer-link">Leadership</a></p>
+      <p><a href="#" class="footer-link">Our Services</a></p>
+      <p><a href="#" class="footer-link">Careers</a></p>
+      <p><a href="#" class="footer-link">Case Studies</a></p>
+      <p><a href="#" class="footer-link">FAQ</a></p>
+    </div>
+    <div class="col-md-3 footer-right">
+      <h4 class="footer-heading">Information</h4>
+      <p><a href="#" class="footer-link">Portfolio</a></p>
+      <p><a href="#" class="footer-link">Our Services</a></p>
+      <p><a href="#" class="footer-link">Contact</a></p>
+      
+    </div>
+    <div class="col-md-3">
+      <h4 class="footer-heading">join our newsletter</h4>
+      <input type="email" class="newsletter-input" placeholder="email@domain.com">
+    </div>
+  </div>
+  <div class="row footer-bottom">
+    <div class="col-md-12">
+      <a href="#" class="social-link">Linked</a>
+      <a href="#" class="social-link">Twitter</a>
+      <a href="#" class="social-link">In</a>
+      <p class="copyright-text">Copyright © 2024 by company. All Rights Reserved.</p>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+
+  <ng-template #detailsView>
+    <app-details [person]="selectedPerson" (back)="goBack()"></app-details>
+  </ng-template>
+</div>

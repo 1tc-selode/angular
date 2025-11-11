@@ -1,0 +1,41 @@
+.film-form {
+	max-width: 720px;
+	margin: 1rem auto;
+	padding: 1rem;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	background: #fff;
+}
+.film-form h2 {
+	margin-top: 0;
+}
+.film-form .row {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.75rem;
+}
+.film-form label {
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+.film-form input,
+.film-form textarea {
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.film-form .actions {
+	margin-top: 0.5rem;
+}
+.film-form .btn.primary {
+	background: #007bff;
+	color: white;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 4px;
+}
+.film-form .saved {
+	margin-top: 0.75rem;
+	color: green;
+	font-weight: 600;
+}

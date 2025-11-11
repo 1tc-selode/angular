@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nev": "Real Madrid",
+    "sportag": "Labdarúgás",
+    "orszag": "Spanyolország",
+    "alapitva": 1902,
+    "leiras": "A spanyol labdarúgás egyik legsikeresebb csapata.",
+    "kedvenc": false
+  },
+  {
+    "id": 2,
+    "nev": "Manchester City",
+    "sportag": "Labdarúgás",
+    "orszag": "Anglia",
+    "alapitva": 1880,
+    "leiras": "Az angol Premier League egyik élcsapata.",
+    "kedvenc": false
+  },
+  {
+    "id": 3,
+    "nev": "Lakers",
+    "sportag": "Kosárlabda",
+    "orszag": "USA",
+    "alapitva": 1947,
+    "leiras": "Az NBA egyik legsikeresebb csapata.",
+    "kedvenc": false
+  },
+  {
+    "id": 4,
+    "nev": "Celtics",
+    "sportag": "Kosárlabda",
+    "orszag": "USA",
+    "alapitva": 1946,
+    "leiras": "Az NBA egyik leghíresebb csapata.",
+    "kedvenc": false
+  },
+  {
+    "id": 5,
+    "nev": "Djokovic",
+    "sportag": "Tenisz",
+    "orszag": "Szerbia",
+    "alapitva": 1987,
+    "leiras": "Szerb teniszező, többszörös Grand Slam-győztes.",
+    "kedvenc": false
+  },
+  {
+    "id": 6,
+    "nev": "Alcaraz",
+    "sportag": "Tenisz",
+    "orszag": "Spanyolország",
+    "alapitva": 2003,
+    "leiras": "Spanyol teniszező, feltörekvő tehetség.",
+    "kedvenc": false
+  }
+]

@@ -1,0 +1,20 @@
+
+<div class="kapcsolat-form">
+	<h2>Kapcsolat</h2>
+	<form (ngSubmit)="kuldes()" #f="ngForm">
+		<div *ngIf="error()" class="error">{{ error() }}</div>
+		<div *ngIf="success()" class="success">Üzenet elküldve!</div>
+			<label>Név:
+				<input type="text" [(ngModel)]="nev" name="nev" required />
+			</label>
+			<label>Email:
+				<input type="email" [(ngModel)]="email" name="email" required />
+			</label>
+			<label>Üzenet:
+				<textarea [(ngModel)]="uzenet" name="uzenet" required></textarea>
+			</label>
+		<div class="form-actions">
+			<button type="submit">Küldés</button>
+		</div>
+	</form>
+</div>

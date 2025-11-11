@@ -1,0 +1,13 @@
+
+<div class="hirek-lista">
+	<h2>Sport hírek</h2>
+	<div *ngFor="let h of hirek()" class="hir-card">
+		<div class="hir-cim">{{ h.cim }}</div>
+		<div class="hir-datum">{{ h.datum }}</div>
+		<div class="hir-leiras">{{ h.leiras }}</div>
+	</div>
+</div>
+
+<div *ngIf="hirek().length === 0" class="empty-state">
+	<p>Nincs hír.</p>
+</div>

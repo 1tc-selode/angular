@@ -1,0 +1,26 @@
+
+<div class="kedvencek">
+	<h2>Kedvenc események</h2>
+	<div *ngIf="kedvencEsemenyek().length > 0; else nincsEsemeny">
+		<div *ngFor="let e of kedvencEsemenyek()" class="kedvenc-card">
+			<div class="kedvenc-nev">{{ e.nev }}</div>
+			<div class="kedvenc-info">{{ e.sportag }} | {{ e.datum }} | {{ e.helyszin }}</div>
+			<button (click)="removeEsemeny(e.id)">Eltávolítás</button>
+		</div>
+	</div>
+	<ng-template #nincsEsemeny>
+		<p>Nincs kedvenc esemény.</p>
+	</ng-template>
+
+	<h2>Kedvenc csapatok</h2>
+	<div *ngIf="kedvencCsapatok().length > 0; else nincsCsapat">
+		<div *ngFor="let c of kedvencCsapatok()" class="kedvenc-card">
+			<div class="kedvenc-nev">{{ c.nev }}</div>
+			<div class="kedvenc-info">{{ c.sportag }} | {{ c.orszag }}</div>
+			<button (click)="removeCsapat(c.id)">Eltávolítás</button>
+		</div>
+	</div>
+	<ng-template #nincsCsapat>
+		<p>Nincs kedvenc csapat.</p>
+	</ng-template>
+</div>

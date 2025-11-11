@@ -1,0 +1,23 @@
+<h2>felhasznalok listaja</h2>
+<div *ngIf="loading">Adatok töltése...</div>
+
+<ng-template [ngIf]="error">
+    <p style="color: red;font-size: 100px;">error</p>
+</ng-template>
+
+<ul>
+    <li *ngFor="let user of users">
+        <strong>{{user.name}} </strong>{{user.email}}
+        <button (click)="loadPosts(user.id)">post betoltes</button>
+        <ng-container *ngIf="posts[user.id]; else noPost">
+            <ul>
+                <li *ngFor="let p of posts[user.id]">
+                    {{p.title}} - {{p.body}}
+                </li>
+            </ul>
+        </ng-container>
+        <ng-template #noPost>
+            
+        </ng-template>
+    </li>
+</ul>

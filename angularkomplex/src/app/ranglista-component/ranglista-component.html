@@ -1,0 +1,25 @@
+
+<div class="ranglista">
+	<h2>Ranglista sportágak szerint</h2>
+	<div *ngFor="let sport of sportagok()" class="ranglista-sportag">
+		<h3>{{ sport }}</h3>
+		<table class="ranglista-table">
+			<thead>
+				<tr>
+					<th>Helyezés</th>
+					<th>Csapat</th>
+					<th>Ország</th>
+					<th>Győzelem</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let c of sortedBySportag(sport); let i = index">
+					<td>{{ i + 1 }}</td>
+					<td>{{ c.nev }}</td>
+					<td>{{ c.orszag }}</td>
+					<td>{{ c.gyozelem }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

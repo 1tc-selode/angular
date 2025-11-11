@@ -1,0 +1,18 @@
+<header>
+	<h1>SportPortál</h1>
+	<nav>
+		<ul class="navbar">
+			<li><a routerLink="/home" routerLinkActive="active">Kezdőlap</a></li>
+			<li><a routerLink="/esemenyek" routerLinkActive="active">Események lista</a></li>
+			<li><a routerLink="/csapatok" routerLinkActive="active">Csapatok</a></li>
+			<li><a routerLink="/ranglista" routerLinkActive="active">Ranglista</a></li>
+			<li><a routerLink="/hirek" routerLinkActive="active">Hírek</a></li>
+			<li><a routerLink="/kedvencek" routerLinkActive="active">Kedvencek</a></li>
+			<li><a routerLink="/kapcsolat" routerLinkActive="active">Kapcsolat</a></li>
+		</ul>
+	</nav>
+</header>
+
+<main style="background: #eaeaea; color: #111; min-height: 80vh; padding: 1.5rem 0;">
+	<router-outlet></router-outlet>
+</main>

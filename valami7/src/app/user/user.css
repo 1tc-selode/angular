@@ -1,0 +1,18 @@
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.grid-list-li{
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #00000067;
+}
+
+.grid-list-li:hover{
+    background-color: #000000a1;
+    cursor: pointer;
+}

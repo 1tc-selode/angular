@@ -1,0 +1,24 @@
+<h2>User {{userId}} Todos</h2>
+
+<div *ngIf="loading">Loading todos...</div>
+
+<h3>Nem kész feladatok</h3>
+<ul>
+  <ng-container *ngFor="let t of todos">
+    <li *ngIf="!t.completed">{{ t.title }}</li>
+  </ng-container>
+</ul>
+
+<h3>Kész feladatok</h3>
+<ul>
+  <ng-container *ngFor="let t of todos">
+    <li *ngIf="t.completed">{{ t.title }}</li>
+  </ng-container>
+</ul>
+
+
+<ng-template #noTodos>
+  <p>Nincs teendő ehhez a felhasználóhoz.</p>
+</ng-template>
+
+<button (click)="goBack()">Vissza a listához</button>

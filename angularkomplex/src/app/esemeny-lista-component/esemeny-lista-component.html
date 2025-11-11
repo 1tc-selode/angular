@@ -1,0 +1,32 @@
+
+<div class="esemeny-lista-header">
+		<input type="text" [(ngModel)]="filter" placeholder="Keresés név, sportág, helyszín szerint..." />
+	<button class="add-btn" (click)="goToUj()">+ Új esemény</button>
+</div>
+
+<div class="esemeny-lista">
+	<div *ngFor="let e of filteredEsemenyek()" class="esemeny-card">
+		<div class="esemeny-card-header">
+			<span class="esemeny-nev" (click)="goToDetail(e.id)">{{ e.nev }}</span>
+			<button class="fav-btn" [class.active]="e.kedvenc" (click)="toggleKedvenc(e.id)" title="Kedvenc">
+				<span *ngIf="e.kedvenc">★</span><span *ngIf="!e.kedvenc">☆</span>
+			</button>
+		</div>
+		<div class="esemeny-info">
+			<div><b>Dátum:</b> {{ e.datum }}</div>
+			<div><b>Helyszín:</b> {{ e.helyszin }}</div>
+			<div><b>Sportág:</b> {{ e.sportag }}</div>
+			<div><b>Csapatok:</b> {{ e.csapatok.join(', ') }}</div>
+		</div>
+		<div class="esemeny-leiras">{{ e.leiras }}</div>
+		<div class="esemeny-actions">
+			<button (click)="goToDetail(e.id)">Részletek</button>
+			<button (click)="goToEdit(e.id)">Szerkeszt</button>
+			<button (click)="torolEsemeny(e.id)">Törlés</button>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="filteredEsemenyek().length === 0" class="empty-state">
+	<p>Nincs találat.</p>
+</div>

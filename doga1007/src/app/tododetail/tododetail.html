@@ -1,0 +1,8 @@
+
+ <ng-container *ngIf="todolist; else noListSelected">
+    <p>Részletek: {{todolist?.description}}</p>
+    <button (click)="onRemove()">Törlés</button>
+ </ng-container>
+
+ <ng-template #noListSelected>
+    <p>Nincs kiválasztva feladat</p>

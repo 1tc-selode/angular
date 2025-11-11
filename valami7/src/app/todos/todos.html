@@ -1,0 +1,12 @@
+<h2>todos lista</h2>
+
+<div *ngIf="!loaded">Loading...</div>
+
+<ul class="grid-list">
+    <li class="grid-list-li" *ngFor="let t of todos" (click)="selectPost(t.id)">
+        <h3>{{ t.id }}</h3>
+        <p>{{ t.userId}}</p>
+    </li>
+</ul>
+
+<app-todosdetail *ngIf="selectedpost" [post]="selectedpost" (back)="clearSelection()"></app-todosdetail>

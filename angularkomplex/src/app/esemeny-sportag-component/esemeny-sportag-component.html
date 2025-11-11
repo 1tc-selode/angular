@@ -1,0 +1,19 @@
+
+<div class="esemeny-sportag-header">
+	<h2>Események sportág szerint: {{ sportag() }}</h2>
+</div>
+
+<div class="esemeny-sportag-lista">
+	<div *ngFor="let e of filteredEsemenyek()" class="esemeny-card">
+		<div class="esemeny-nev" (click)="goToDetail(e.id)">{{ e.nev }}</div>
+		<div class="esemeny-info">
+			<div><b>Dátum:</b> {{ e.datum }}</div>
+			<div><b>Helyszín:</b> {{ e.helyszin }}</div>
+			<div><b>Csapatok:</b> {{ e.csapatok.join(', ') }}</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="filteredEsemenyek().length === 0" class="empty-state">
+	<p>Nincs esemény ebben a sportágban.</p>
+</div>

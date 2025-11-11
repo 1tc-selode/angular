@@ -1,0 +1,30 @@
+<section class="konyv-form">
+  <h2>Új könyv hozzáadása</h2>
+  <form (submit)="onSubmit($event)">
+    <div class="row">
+      <label for="title">Cím</label>
+      <input id="title" name="title" type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" />
+    </div>
+
+    <div class="row">
+      <label for="author">Szerző</label>
+      <input id="author" name="author" type="text" [(ngModel)]="author" [ngModelOptions]="{standalone: true}" />
+    </div>
+
+    <div class="row">
+      <label for="year">Kiadás éve</label>
+      <input id="year" name="year" type="number" [(ngModel)]="year" [ngModelOptions]="{standalone: true}" />
+    </div>
+
+    <div class="row">
+      <label for="desc">Rövid leírás</label>
+      <textarea id="desc" name="desc" rows="3" [(ngModel)]="description" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn primary">Hozzáadás</button>
+    </div>
+
+    <div *ngIf="saved" class="saved">Könyv sikeresen hozzáadva!</div>
+  </form>
+</section>

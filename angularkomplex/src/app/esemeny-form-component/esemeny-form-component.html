@@ -1,0 +1,34 @@
+
+<div class="esemeny-form">
+	<h2 *ngIf="!szerkesztes()">Új esemény</h2>
+	<h2 *ngIf="szerkesztes()">Esemény szerkesztése</h2>
+
+	<form (ngSubmit)="mentes()" #f="ngForm">
+		<div *ngIf="error()" class="error">{{ error() }}</div>
+		<label>Név:
+			<input type="text" [(ngModel)]="esemeny().nev" name="nev" required />
+		</label>
+		<label>Dátum:
+			<input type="date" [(ngModel)]="esemeny().datum" name="datum" required />
+		</label>
+		<label>Helyszín:
+			<input type="text" [(ngModel)]="esemeny().helyszin" name="helyszin" required />
+		</label>
+		<label>Sportág:
+			<input type="text" [(ngModel)]="esemeny().sportag" name="sportag" required />
+		</label>
+		<label>Leírás:
+			<textarea [(ngModel)]="esemeny().leiras" name="leiras"></textarea>
+		</label>
+		<label>Csapatok (vesszővel):
+			<input type="text" [(ngModel)]="esemeny().csapatok" name="csapatok" />
+		</label>
+		<label>
+			<input type="checkbox" [(ngModel)]="esemeny().kedvenc" name="kedvenc" /> Kedvenc
+		</label>
+		<div class="form-actions">
+			<button type="submit">Mentés</button>
+			<button type="button" (click)="vissza()">Mégse</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="items.length > 0; else notfound">
+	<h2>{{ category | titlecase }} ételek</h2>
+	<ul>
+		<li *ngFor="let item of items">{{ item }}</li>
+	</ul>
+</ng-container>
+<ng-template #notfound>
+	<p>Nincs ilyen kategória vagy nincs étel ebben a kategóriában.</p>
+</ng-template>

@@ -1,0 +1,10 @@
+<h2>Rólunk</h2>
+
+<p>Kisujszallas</p>
+
+<hr>
+<ul>
+    <li *ngFor="let t of tomb; let i = index">
+        <a [routerLink]="['/about',i]"> {{t}}</a>
+    </li>
+</ul>

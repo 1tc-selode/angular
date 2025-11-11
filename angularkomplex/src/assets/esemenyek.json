@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nev": "Bajnokok Ligája Döntő",
+    "datum": "2024-06-01",
+    "helyszin": "London",
+    "sportag": "Labdarúgás",
+    "leiras": "A Bajnokok Ligája 2024-es döntője.",
+    "kedvenc": false,
+    "csapatok": ["Real Madrid", "Manchester City"]
+  },
+  {
+    "id": 2,
+    "nev": "NBA Döntő",
+    "datum": "2024-06-10",
+    "helyszin": "Los Angeles",
+    "sportag": "Kosárlabda",
+    "leiras": "Az NBA 2024-es döntője.",
+    "kedvenc": false,
+    "csapatok": ["Lakers", "Celtics"]
+  },
+  {
+    "id": 3,
+    "nev": "Wimbledon Döntő",
+    "datum": "2024-07-14",
+    "helyszin": "London",
+    "sportag": "Tenisz",
+    "leiras": "A Wimbledon 2024-es döntője.",
+    "kedvenc": false,
+    "csapatok": ["Djokovic", "Alcaraz"]
+  }
+]

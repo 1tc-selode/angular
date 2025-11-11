@@ -1,0 +1,23 @@
+<header>
+  <h1>Film & Könyv nyilvántartó oldal</h1>
+  <nav>
+    <ul class="navbar">
+      <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+      <li><a routerLink="/top10" routerLinkActive="active">Top10</a></li>
+      <li><a routerLink="/film-lista" routerLinkActive="active">Filmek</a></li>
+      <li><a routerLink="/film-form" routerLinkActive="active">Új film</a></li>
+      <li><a routerLink="/film-detail" routerLinkActive="active">Film részletek</a></li>
+      <li><a routerLink="/film-kategoria" routerLinkActive="active">Filmkategóriák</a></li>
+      <li><a routerLink="/konyv-lista" routerLinkActive="active">Könyvek</a></li>
+      <li><a routerLink="/konyv-form" routerLinkActive="active">Új könyv</a></li>
+      <li><a routerLink="/konyv-detail" routerLinkActive="active">Könyv részletek</a></li>
+      <li><a routerLink="/ujdonsagok" routerLinkActive="active">Újdonságok</a></li>
+      <li><a routerLink="/kedvencek" routerLinkActive="active">Kedvencek</a></li>
+      <li><a routerLink="/kapcsolat" routerLinkActive="active">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

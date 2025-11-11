@@ -1,0 +1,7 @@
+<h2>Elérhető úti célok</h2>
+<ul>
+	<li *ngFor="let d of destinations">
+		<img [src]="d.image" alt="{{d.city}}" width="80" style="vertical-align:middle; margin-right:10px;">
+		<a [routerLink]="['/destinations', d.id]">{{ d.city }}, {{ d.country }}</a> – {{ d.price | number }} Ft
+	</li>
+</ul>

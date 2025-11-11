@@ -1,0 +1,31 @@
+
+<div class="csapat-lista-header">
+	<input type="text" [(ngModel)]="filter" placeholder="Keresés név, sportág, ország szerint..." />
+	<button class="add-btn" (click)="goToUj()">+ Új csapat</button>
+</div>
+
+<div class="csapat-lista">
+	<div *ngFor="let c of filteredCsapatok()" class="csapat-card">
+		<div class="csapat-card-header">
+			<span class="csapat-nev" (click)="goToDetail(c.id)">{{ c.nev }}</span>
+			<button class="fav-btn" [class.active]="c.kedvenc" (click)="toggleKedvenc(c.id)" title="Kedvenc">
+				<span *ngIf="c.kedvenc">★</span><span *ngIf="!c.kedvenc">☆</span>
+			</button>
+		</div>
+		<div class="csapat-info">
+			<div><b>Sportág:</b> {{ c.sportag }}</div>
+			<div><b>Ország:</b> {{ c.orszag }}</div>
+			<div><b>Alapítva:</b> {{ c.alapitva }}</div>
+		</div>
+		<div class="csapat-leiras">{{ c.leiras }}</div>
+		<div class="csapat-actions">
+			<button (click)="goToDetail(c.id)">Részletek</button>
+			<button (click)="goToEdit(c.id)">Szerkeszt</button>
+			<button (click)="torolCsapat(c.id)">Törlés</button>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="filteredCsapatok().length === 0" class="empty-state">
+	<p>Nincs találat.</p>
+</div>

@@ -1,0 +1,14 @@
+<ng-container *ngIf="flight; else noFlight">
+  <h3>Járat részletei</h3>
+  <p><strong>ID:</strong> {{ flight.id }}</p>
+  <p><strong>Indulás:</strong> {{ flight.departure }} — {{ flight.departureTime }}</p>
+  <p><strong>Érkezés:</strong> {{ flight.arrival }} — {{ flight.arrivalTime }}</p>
+  <p><strong>Repülőgép:</strong> {{ flight.plane }}</p>
+  <p><strong>Férőhelyek:</strong> {{ flight.seats }}</p>
+  <p><strong>Szabad helyek:</strong> {{ flight.freeSeats }}</p>
+  <button (click)="onRemove()">Törlés</button>
+</ng-container>
+
+<ng-template #noFlight>
+  <p>Nincs kiválasztva járat</p>
+</ng-template>

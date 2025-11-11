@@ -1,0 +1,24 @@
+
+<div *ngIf="esemeny() as e; else loading">
+	<div class="esemeny-detail-header">
+		<h2>{{ e.nev }}</h2>
+		<button class="fav-btn" [class.active]="e.kedvenc" (click)="toggleKedvenc()" title="Kedvenc">
+			<span *ngIf="e.kedvenc">★</span><span *ngIf="!e.kedvenc">☆</span>
+		</button>
+	</div>
+	<div class="esemeny-detail-info">
+		<div><b>Dátum:</b> {{ e.datum }}</div>
+		<div><b>Helyszín:</b> {{ e.helyszin }}</div>
+		<div><b>Sportág:</b> {{ e.sportag }}</div>
+		<div><b>Csapatok:</b> {{ e.csapatok.join(', ') }}</div>
+	</div>
+	<div class="esemeny-detail-leiras">{{ e.leiras }}</div>
+	<div class="esemeny-detail-actions">
+		<button (click)="goToEdit()">Szerkeszt</button>
+		<button (click)="torolEsemeny()">Törlés</button>
+		<button routerLink="/esemenyek">Vissza a listához</button>
+	</div>
+</div>
+<ng-template #loading>
+	<p>Betöltés...</p>
+</ng-template>

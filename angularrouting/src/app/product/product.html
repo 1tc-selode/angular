@@ -1,0 +1,7 @@
+<h2>Termékek</h2>
+
+<ul>
+    <li *ngFor="let product of products; let i = index">
+        <a [routerLink]="['/product',i]"> {{product}}</a>
+    </li>
+</ul>
